@@ -17,18 +17,13 @@ const net = require('net');
 
   conn.on('connect', () => {
     conn.write('Name: JEH');
-
     /* for (let i = 0; i < 10; i++) {
     setTimeout(() => {
     conn.write('Move: up')
     }, i * 1000)
     } */
-
   });
-  
-  
     
-
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
 
