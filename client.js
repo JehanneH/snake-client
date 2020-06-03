@@ -3,8 +3,8 @@ const net = require('net');
  const connect = function() {
 
   const conn = net.createConnection({ 
-    host: '135.23.222.148',
-    port: 50541
+    host: IP,
+    port: PORT
   });
 
   conn.on('data', (data) => {
@@ -17,18 +17,12 @@ const net = require('net');
 
   conn.on('connect', () => {
     conn.write('Name: JEH');
-    /* for (let i = 0; i < 10; i++) {
-    setTimeout(() => {
-    conn.write('Move: up')
-    }, i * 1000)
-    } */
   });
     
-  // interpret incoming data as text
   conn.setEncoding('utf8'); 
 
   return conn;
 }
 
-
 module.exports = { connect };
+const { IP, PORT } = require('./constants');
